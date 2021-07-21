@@ -1,7 +1,13 @@
 FROM openjdk:11-jre
-RUN ls
-ADD entrypoint.sh /entrypoint.sh
 
-RUN ls
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+EXPOSE 42638
+
+WORKDIR /server2/
+ADD /3.0-SNAPSHOT-all.jar /server2/
+#RUN chmod +x options && ./options
+  #ADD server2.conf.docker /server2/server2.conf
+
+  #VOLUME /data/logs/  
+
+#CMD java -jar /server2/3.0-SNAPSHOT-all.jar
+RUN java -jar 3.0-SNAPSHOT-all.jar
