@@ -1,4 +1,4 @@
-FROM debian:9.5-slim
+FROM openjdk:11-jre
 RUN ls
 ADD entrypoint.sh /entrypoint.sh
 
